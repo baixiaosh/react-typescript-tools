@@ -16,7 +16,7 @@ const Home = Loadable({
     loader: () => import('../page/Home'),
     loading: Loading
 });
-@hot(module)
+
 class RoutesIndex extends Component {
     render() {
         return (
@@ -28,4 +28,4 @@ class RoutesIndex extends Component {
     }
 }
 
-export default RoutesIndex;
+export default hot(module)(RoutesIndex);
