@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Link } from 'react-router-dom';
 import RouteIndex from './route';
@@ -9,8 +10,8 @@ import './App.less';
 import betaAction from './redux/action/beta';
 
 interface IProps {
-    beta: any;
-    dispatch: Function;
+    beta?: any;
+    dispatch?: Dispatch;
 }
 
 class App extends Component<IProps, {}> {
@@ -18,7 +19,10 @@ class App extends Component<IProps, {}> {
         console.log(this.props);
     }
     handleClick() {
-        this.props.dispatch(betaAction.betaChange());
+        const dispatch = this.props.dispatch;
+        if (dispatch) {
+            dispatch(betaAction.betaChange());
+        }
     }
     render() {
         const { beta } = this.props;

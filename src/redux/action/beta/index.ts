@@ -1,10 +1,9 @@
 import types from '../../types/beta';
 
-let betaAction = {
-    betaChange: () => {
+export default {
+    betaChange: (): any => {
         return {
             type: types.BETA_TYPE
         };
     }
-};
-export default betaAction;
+};;
