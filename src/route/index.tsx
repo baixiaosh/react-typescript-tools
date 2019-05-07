@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
-import * as Loadable from 'react-loadable';
+import Loadable from 'react-loadable';
 
 function Loading() {
     return <div>Loading...</div>;
