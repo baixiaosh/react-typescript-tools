@@ -4,6 +4,7 @@
     "private": true,
     "dependencies": {
         "@babel/core": "7.4.3",
+        "@babel/plugin-proposal-decorators": "^7.4.4",
         "@svgr/webpack": "4.1.0",
         "@types/jest": "^24.0.12",
         "@types/node": "^12.0.0",
@@ -139,6 +140,20 @@
         ]
     },
     "babel": {
+        "plugins": [
+            [
+                "@babel/plugin-proposal-decorators",
+                {
+                    "legacy": true
+                }
+            ],
+            [
+                "@babel/plugin-proposal-class-properties",
+                {
+                    "loose": true
+                }
+            ]
+        ],
         "presets": [
             "react-app"
         ]

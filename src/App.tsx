@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dispatch } from 'redux';
+import { Dispatch, bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Link } from 'react-router-dom';
 import RouteIndex from './route';
@@ -14,7 +14,13 @@ interface IProps {
     dispatch?: Dispatch;
 }
 
+@(connect(state => state) as any)
 class App extends Component<IProps, {}> {
+    constructor(props: IProps) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
     componentDidMount() {
         console.log(this.props);
     }
@@ -38,7 +44,7 @@ class App extends Component<IProps, {}> {
                         <Link className="App-link" to="/home">
                             link
                         </Link>
-                        <button onClick={this.handleClick.bind(this)}>change</button>
+                        <button onClick={this.handleClick}>change</button>
                         <div>beta:{beta.text}</div>
                     </header>
                     <RouteIndex />
@@ -48,4 +54,4 @@ class App extends Component<IProps, {}> {
     }
 }
 
-export default connect(state => state)(App);
+export default App;
