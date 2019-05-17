@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dispatch, bindActionCreators } from 'redux';
+import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { HashRouter as Router, Link } from 'react-router-dom';
 import RouteIndex from './route';
